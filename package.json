@@ -2,9 +2,9 @@
   "name": "adm_site",
   "version": "1.0.0",
   "description": "BRUNA - SITE E SISTEMA ADM",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "PAULO CUADROS",
   "license": "ISC",
