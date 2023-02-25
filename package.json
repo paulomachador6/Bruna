@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "BRUNA - SITE E SISTEMA ADM",
   "main": "app.js",
+  "engines":{
+    "node": "14.x",
+    "dev": "nodemon"
+  },
   "scripts": {
     "start": "node app.js"
   },
