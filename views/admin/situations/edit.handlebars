@@ -1,0 +1,29 @@
+<!-- Inicio do conteudo do administrativo -->
+<div class="wrapper">
+  <div class="row">
+    <div class="top-list">
+      <span class="title-content">Editar</span>
+      <div class="top-list-right">
+        <a href="/situations?page=1" class="btn-info">Listar</a>
+        <a href="/situations/view/{{data.id}}" class="btn-primary">Visualizar</a>
+      </div>
+    </div>
+
+    {{>_msgAdm}}
+
+    <div class="content-adm">
+      <form class="form-adm" action="/situations/edit" method="post">
+        <input type="hidden" name="id" id="id" value="{{data.id}}">
+        <div class="row-input">
+          <div class="column">
+            <label class="title-input">Nome:<span class="text-danger">*</span></label>
+            <input type="text" name="nomeSituacao" id="nomeSituacao" class="input-adm" placeholder="Nome completo" value="{{data.nomeSituacao}}">
+          </div>
+        </div>
+        <p class="text-danger mb-5 fs-4">* Campo Obrigatório</p>
+        <input type="submit" class="btn-warning" value="Editar" />
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Fim do conteudo do administrativo -->

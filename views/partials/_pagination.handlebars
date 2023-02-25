@@ -1,0 +1,25 @@
+<div class="content-pagination">
+    {{!-- INÍCIO DA PAGINAÇÃO --}}
+    <div class="pagination">
+        {{!-- LINK PARA REDIRECIONAR PARA PRIMEIRA PÁGINA --}}
+        {{#if pagination.page}}
+        <a href="{{pagination.path}}?page=1">&laquo;</a>
+        {{/if}}
+        {{!-- LINK PARA REDIRECIONAR PARA PÁGINA ANTERIOR A ATUAL --}}
+        {{#if pagination.prev_page_url}}
+        <a href="{{pagination.path}}?page={{pagination.prev_page_url}}">{{pagination.prev_page_url}}</a>
+        {{/if}}
+        {{!-- LINK PARA REDIRECIONAR PARA PRÓXIMA PÁGINA EM RELAÇÃO A ATUAL --}}
+        {{#if pagination.page}}
+        <a href="#" class="active">{{pagination.page}}</a>
+        {{/if}}
+         {{!-- LINK PARA REDIRECIONAR PARA PRÓXIMA PÁGINA EM RELAÇÃO A ATUAL --}}
+        {{#if pagination.next_page_url}}
+        <a href="{{pagination.path}}?page={{pagination.next_page_url}}">{{pagination.next_page_url}}</a>
+        {{/if}}
+        {{!-- LINK PARA REDIRECIONAR PARA ÚLTIMA PÁGINA --}}
+        {{#if pagination.lastPage}}
+        <a href="{{pagination.path}}?page={{pagination.lastPage}}">&raquo;</a>
+        {{/if}}
+    </div>
+</div>

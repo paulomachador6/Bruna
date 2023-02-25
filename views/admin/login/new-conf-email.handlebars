@@ -1,0 +1,21 @@
+<div class="container-login">
+    <div class="wrapper-login">
+        <div class="title">
+            <span>Novo Link</span>
+        </div>
+        <!-- Imprimir as mensagens que estão na sessão -->
+        {{>_msg}}
+        <form class="form-login" action="/conf-email/new-conf-email" method="post">
+            <div class="row">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" name="email" id="email" placeholder="Seu e-mail de cadastrado" value="{{data.email}}" >
+            </div>
+            <div class="row button">
+                <input type="submit" value="Enviar">
+            </div>
+            <div class="signup-link">
+                <a href="/login">Clique aqui </a> para acessar
+            </div>
+        </form>
+    </div>
+</div>

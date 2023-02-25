@@ -1,0 +1,37 @@
+<!-- Inicio do conteudo do administrativo -->
+<div class="wrapper">
+  <div class="row">
+    <div class="top-list">
+      <span class="title-content">Visualizar</span>
+      <div class="top-list-right">
+        <a href="/noticias?page=1" class="btn-info">Listar</a>
+      </div>
+    </div>
+
+    {{>_msgAdm}}
+
+      <div class="content-adm">
+            <div class="view-det-adm">
+                <span class="view-adm-title">ID: </span>
+                <span class="view-adm-info">{{noticia.dataValues.id}}</span>
+            </div>
+
+            <div class="view-det-adm">
+                <span class="view-adm-title">Nome: </span>
+                <span class="view-adm-info">{{noticia.dataValues.nome}}</span>
+            </div>
+            <div class="view-det-adm">
+                <span class="view-adm-title">Cadastrado: </span>
+                <span class="view-adm-info">
+                    {{#formatDate noticia.dataValues.createdAt}}{{/formatDate}}
+                    </span>
+            </div>
+
+            <div class="view-det-adm">
+                <span class="view-adm-title">Editado: </span>
+                <span class="view-adm-info">{{#fotmatDateTime noticia.dataValues.updatedAt}}{{/fotmatDateTime}}</span>
+            </div>
+        </div>
+  </div>
+</div>
+<!-- Fim do conteudo do administrativo -->

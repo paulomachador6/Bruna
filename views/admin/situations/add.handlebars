@@ -1,0 +1,27 @@
+<!-- Inicio do conteudo do administrativo -->
+<div class="wrapper">
+  <div class="row">
+    <div class="top-list">
+      <span class="title-content">Cadastrar</span>
+      <div class="top-list-right">
+        <a href="/situations?page=1" class="btn-info">Listar</a>
+      </div>
+    </div>
+
+    {{>_msgAdm}}
+
+    <div class="content-adm">
+      <form class="form-adm" action="/situations/add" method="post">
+        <div class="row-input">
+          <div class="column">
+            <label class="title-input">Nome:<span class="text-danger">*</span></label>
+            <input type="text" name="nomeSituacao" id="nomeSituacao" class="input-adm" placeholder="Nome completo">
+          </div>
+        </div>
+          <p class="text-danger mb-5 fs-4">* Campo Obrigatório</p>
+         <input type="submit" class="btn-success" value="Cadastrar" />
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Fim do conteudo do administrativo -->

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/images/icon/favicon.ico">
+  <!-- Incluir os icones do font-awesome da CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/custom_adm.css">
+  <title>📋 ADM 👩‍⚖️ BRUNA 👨‍⚖️ VILMAR</title>
+</head>
+
+<body>
+  <!-- CARREGAR O HEADER -->
+  {{>_header}}
+<!-- INÍCIO DO CONTEÚDO -->
+  <div class="content">
+
+    <!-- CARREGAR A SIDEBAR -->
+    {{>_sidebar}}
+    <!-- CARREGAR O CONTEÚDO DA PÁGINA -->
+    {{{body}}}
+  </div>
+  <script src="/js/custom_adm.js"></script>
+</body>
+
+</html>

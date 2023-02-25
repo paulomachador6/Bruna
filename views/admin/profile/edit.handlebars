@@ -1,0 +1,34 @@
+<!-- Inicio do conteudo do administrativo -->
+<div class="wrapper">
+    <div class="row">
+        <div class="top-list">
+            <span class="title-content">Editar</span>
+            <div class="top-list-right">
+                 <a href="/profile" class="btn-primary">Perfil</a>
+            </div>
+        </div>
+        {{>_msgAdm}}
+
+        <div class="content-adm">
+            {{!-- FORMULÁRIO PARA CADASTRAR UM NOVO USUÁRIO --}}
+            <form class="form-adm" action="/profile/edit" method="post">
+                <div class="row-input">
+                    <div class="column">
+                        <label class="title-input">Nome:<span class="text-danger">*</span></label>
+                        <input type="text" name="nome" id="nome" class="input-adm" placeholder="Nome completo"
+                            value="{{data.nome}}">
+                    </div>
+                    <div class="column">
+                        <label class="title-input">E-mail:<span class="text-danger">*</span></label>
+                        <input type="email" name="email" id="email" class="input-adm" placeholder="Melhor e-mail"
+                            value="{{data.email}}">
+                    </div>
+                </div>
+                <p class="text-danger mb-5 fs-4">* Campo Obrigatório</p>
+
+                <input type="submit" class="btn-warning" value="Editar" />
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Fim do conteudo do administrativo -->
