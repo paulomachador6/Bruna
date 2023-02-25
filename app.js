@@ -124,6 +124,9 @@ app.use('/profile/edit-image', profile);
 
 
 //INICIAR O SERVIDOR NA PORTA 8080
-app.listen(8080, () => {
-  console.log("SERVIDOR INICIADO NA PORTA 8080: http://localhost:8080");
-});
+// app.listen(8080, () => {
+//   console.log("SERVIDOR INICIADO NA PORTA 8080: http://localhost:8080");
+// });
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () =>   console.log("SERVIDOR INICIADO NA PORTA 8080: http://localhost:8080"));

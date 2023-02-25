@@ -4,11 +4,11 @@
   "description": "BRUNA - SITE E SISTEMA ADM",
   "main": "app.js",
   "engines":{
-    "node": "14.x",
-    "dev": "nodemon"
+    "node": "18.x"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app,js"
   },
   "author": "PAULO CUADROS",
   "license": "ISC",
