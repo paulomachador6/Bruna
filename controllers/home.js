@@ -8,7 +8,8 @@ const router = express.Router();
 
 //CRIAR A ROTA RAIZ
 router.get('/', (req, res) => {
-  //res.send('Página Inicial');
+ // res.send('Página Inicial');
+ res.render("admin/login/login", { layout: 'login' });
 });
 
 //EXPORTAR A INSTRUÇÃO QUE ESTÁ DENTRO DA CONSTANTE ROUTER
