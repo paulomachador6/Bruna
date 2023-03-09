@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "BRUNA - SITE E SISTEMA ADM",
   "main": "app.js",
-  "packageManager": "pnpm@7.7.0",
   "engines": {
     "node": "18.x"
   },

@@ -1,0 +1,26 @@
+<!-- Inicio do conteudo do administrativo -->
+<div class="wrapper">
+    <div class="row">
+        <div class="top-list">
+            <span class="title-content">Editar Imagem</span>
+            <div class="top-list-right">
+                <a href="/noticias?page=1" class="btn-info">Listar</a>
+                <a href="/noticias/view/{{idNoticia}}" class="btn-primary">Visualizar</a>
+            </div>
+        </div>
+
+        <!-- Imprimir as mensagens que estão na sessão -->
+        {{>_msgAdm}}
+
+        <div class="content-adm">
+            <!-- Formulário para Editar imagem da notícia -->
+            <form class="form-adm" action="/noticias/edit-image" method="post"
+                enctype="multipart/form-data">
+                <input type="hidden" name="idNoticia" value="{{idNoticia}}">
+                
+                </div>
+                <input type="submit" class="btn-warning" value="Editar">
+            </form>
+        </div>
+    </div>
+</div>

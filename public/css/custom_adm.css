@@ -980,3 +980,62 @@ select.input-search:focus{
 /* Fim tamanho fonte*/
 
 /* Fim conteudo */
+
+
+
+/* teste  */
+.imagem {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .imagem1 {
+    background-image: url(https://www.pontotel.com.br/wp-content/uploads/2022/05/imagem-corporativa.jpg);
+  }
+  
+  .imagem2 {
+    background-image: url(https://www.pontotel.com.br/wp-content/uploads/2022/05/imagem-corporativa.jpg);
+  }
+  
+  .imagem3 {
+    background-image: url(https://www.pontotel.com.br/wp-content/uploads/2022/05/imagem-corporativa.jpg);
+  }
+
+.retangulo {
+    width: 100%;
+    height: 12vw;
+    border: 2px solid black;
+  }
+  
+  .imagem {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  @media (max-width: 768px) {
+    .retangulo {
+      height: 60vw;
+    }
+    
+    .imagem {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .retangulo {
+      height: 80vw;
+    }
+    
+    .imagem {
+      width: 100%;
+    }
+  }

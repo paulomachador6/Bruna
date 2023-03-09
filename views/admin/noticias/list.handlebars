@@ -14,8 +14,8 @@
             <thead class="list-head">
                 <tr>
                     <th class="list-head-content">ID</th>
-                    <th class="list-head-content">Nome</th>
-                    <th class="list-head-content">Descricao</th>
+                    <th class="list-head-content">Título da notícia</th>
+                    <th class="list-head-content">Subtítulo</th>
                     <th class="list-head-content">Ações</th>
                 </tr>
             </thead>
@@ -23,15 +23,15 @@
                 {{#each noticias}}
                 <tr>
                     <td class="list-body-content">{{id}}</td>
-                    <td class="list-body-content">{{nome}}</td>
-                    <td class="list-body-content">{{descricao}}</td>
+                    <td class="list-body-content">{{titulo}}</td>
+                    <td class="list-body-content">{{subtitulo}}</td>
                     <td class="list-body-content">
                         <div class="dropdown-action">
                             <button onclick="actionDropdown({{id}})" class="dropdown-btn-action">Ações</button>
                             <div id="actionDropdown{{id}}" class="dropdown-action-item">
                                 <a href="/noticias/view/{{id}}">Visualizar</a>
                                 <a href="/noticias/edit/{{id}}">Editar</a>
-                                <a href="#">Apagar</a>
+                               <a href="/noticias/delete/{{id}}" onclick="return confirm('Tem certeza que deseja excluir este registro? ')">Apagar</a>
                             </div>
                         </div>
                     </td>

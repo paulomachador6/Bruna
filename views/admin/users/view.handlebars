@@ -16,54 +16,48 @@
                     deseja excluir este registro?')">Apagar</a>
             </div>
         </div>
-
         {{>_msgAdm}}
 
         <div class="content-adm">
-
             <div class="view-det-adm">
                 <span class="view-adm-title">Imagem: </span>
                 <span class="view-adm-info">
                     {{#if user.dataValues.image }}
-                    <img src="/images/users/{{user.dataValues.image}}" class="view-image-user">
+                    <img src="/images/users/{{user.dataValues.image}}"
+                        class="view-image-user">
                     {{else}}
                     <img src="/images/users/user.jpg" class="view-image-user">
                     {{/if}}
 
                 </span>
             </div>
-
             <div class="view-det-adm">
                 <span class="view-adm-title">ID: </span>
                 <span class="view-adm-info">{{user.dataValues.id}}</span>
             </div>
-
             <div class="view-det-adm">
                 <span class="view-adm-title">Nome: </span>
                 <span class="view-adm-info">{{user.dataValues.nome}}</span>
             </div>
-
             <div class="view-det-adm">
                 <span class="view-adm-title">E-mail: </span>
                 <span class="view-adm-info">{{user.dataValues.email}}</span>
             </div>
-
             <div class="view-det-adm">
                 <span class="view-adm-title">Situação: </span>
                 <span class="view-adm-info">
-                    <a href="/situations/view/{{user.dataValues.situationId}}">
+                    <a
+                        href="/situations/view/{{user.dataValues.situationId}}">
                         {{user.situation.dataValues.nomeSituacao}}
                     </a>
                 </span>
             </div>
-
             <div class="view-det-adm">
                 <span class="view-adm-title">Cadastrado: </span>
                 <span class="view-adm-info">
                     {{#formatDate user.dataValues.createdAt}}{{/formatDate}}
                 </span>
             </div>
-
             <div class="view-det-adm">
                 <span class="view-adm-title">Editado: </span>
                 <span class="view-adm-info">{{#fotmatDateTime
@@ -72,4 +66,5 @@
         </div>
     </div>
 </div>
+
 <!-- Fim do conteudo do administrativo -->

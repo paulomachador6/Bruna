@@ -1,0 +1,74 @@
+<!-- Inicio do conteudo do administrativo -->
+<div class="wrapper">
+  <div class="row">
+    <div class="top-list">
+      <span class="title-content">Cadastrar</span>
+      <div class="top-list-right">
+        <a href="/users?page=1" class="btn-info">Listar</a>
+      </div>
+    </div>
+
+    {{>_msgAdm}}
+
+    <div class="content-adm">
+      {{!-- FORMULÁRIO PARA CADASTRAR UM NOVO USUÁRIO --}}
+      <form class="form-adm" action="/noticias/add" method="post">
+        <div class="column">
+          <label class="title-input">Título da notícia:<span
+              class="text-danger">*</span></label>
+          <input type="text" name="titulo" id="titulo" class="input-adm"
+            placeholder="Título da notícia"
+            value="{{data.titulo}}">
+        </div>
+        <div class="column">
+          <label class="title-input">Subtítulo da notícia:</label>
+          <input type="text" name="subtitulo" id="subtitulo" class="input-adm"
+            placeholder="Subtítulo da notícia"
+            value="{{data.subtitulo}}">
+        </div>
+        <div class="column">
+          <label class="title-input">Conteúdo da notícia:<span
+              class="text-danger">*</span></label>
+          <input type="text" name="conteudo" id="conteudo" class="input-adm"
+            placeholder="Conteúdo da notícia"
+            value="{{data.descricao}}">
+        </div>
+        <div class="column">
+          <label class="title-input">Autor:<span class="text-danger">*</span></label>
+          <input type="text" name="autor" id="autor" class="input-adm"
+            placeholder="Autor da notícia"
+            value="{{data.autor}}">
+        </div>
+        <div class="row-input">
+          <div class="column">
+            <label class="title-input">Situação:<span class="text-danger">*</span></label>
+            <select name="situationId" id="situationId" class="input-adm">
+              <option value="{{#if data.situation.dataValues.id}}
+                {{data.situation.dataValues.id}}{{/if}}"
+                hidden="hidden" selected="selected">
+                {{#if data.situation.dataValues.id}}
+                {{data.situation.dataValues.nomeSituacao}}
+                {{else}}
+                Selecione
+                {{/if}}
+              </option>
+              {{#each data.situations}}
+              <option value="{{dataValues.id}}">{{dataValues.nomeSituacao}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
+        {{!-- <div class="column">
+          <label class="title-input">Escolher as imagens:<span
+              class="text-danger">*</span></label>
+          <input name="image" id="image" type="file" accept="image/*" multiple
+            />
+        </div> --}}
+        <p class="text-danger mb-5 fs-4">* Campo Obrigatório</p>
+
+        <input type="submit" class="btn-success" value="Cadastrar" />
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Fim do conteudo do administrativo -->

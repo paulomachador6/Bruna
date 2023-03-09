@@ -66,6 +66,9 @@ EXECUTAR AS MIGRATION
 CRIAR SEEDERS
 ### npx sequelize-cli seed:generate --name demo-users
 
+EXECUTAR UMA UNICA SEEDERS
+### npx sequelize-cli db:seed --seed 20181005185212-create-users.js
+
 EXECUTAR AS SEEDERS
 ### npx sequelize-cli db:seed:all
 
@@ -77,9 +80,12 @@ RECEBER OS DADOS DO FORMULÁRIO
 
 CRIAR A MODELS users
 ### npx sequelize-cli model:generate --name users --attributes nome:string,email:string,password:string,image:string
+
 ### npx sequelize-cli model:generate --name situations --attributes nomesituacao:string
 
-### npx sequelize-cli model:generate --name noticias --attributes nome:string,descricao:string,status:string,image:string
+### npx sequelize-cli model:generate --name noticias --attributes titulo:string,subtitulo:string,conteudo:string,status:string
+
+### npx sequelize-cli model:generate --name imagem --attributes url:string
 
 CRIAR SESSÃO E ARMAZENAR DADOS NO SERVIDOR
 ### npm install --save express-session

@@ -1,0 +1,30 @@
+<!-- Inicio do conteudo do administrativo -->
+<div class="wrapper">
+  <div class="row">
+    <div class="top-list">
+      <span class="title-content">Cadastrar</span>
+      <div class="top-list-right">
+        <a href="/users?page=1" class="btn-info">Listar</a>
+      </div>
+    </div>
+
+    {{>_msgAdm}}
+
+    <div class="content-adm">
+      <form method="post" action="/noticias/add-image"
+        enctype="multipart/form-data">
+        <input type="hidden" name="idNoticia" value="{{idNoticia}}">
+        <input type="file" name="images" multiple>
+        <button type="submit">Enviar</button>
+      </form>
+
+      {{!-- <div class="retangulo">
+        <div class="imagem imagem1"></div>
+        <div class="imagem imagem2"></div>
+        <div class="imagem imagem3"></div>
+      </div> --}}
+
+
+    </div>
+  </div>
+</div>

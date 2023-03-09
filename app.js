@@ -116,12 +116,16 @@ app.use('/situations/edit', situations);
 
 app.use('/noticias', noticias);
 app.use('/noticias/view', noticias);
+app.use('/noticias/add', noticias);
+app.use('/noticias/edit', noticias);
+app.use('/noticias/add-image', noticias);
+app.use('/noticias/edit-image', noticias);
+app.use('/noticias/delete', noticias);
 
 app.use('/profile', profile);
 app.use('/profile/edit', profile);
 app.use('/profile/edit-password', profile);
 app.use('/profile/edit-image', profile);
-
 
 //INICIAR O SERVIDOR NA PORTA 8080
 // app.listen(8080, () => {

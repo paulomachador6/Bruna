@@ -16,9 +16,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      situations.hasMany(models.users,{
-        foreignKey: 'situationId'
-      });
+      situations.hasMany(models.users,{foreignKey: 'situationId'});
+      situations.hasMany(models.noticias,{foreignKey: 'id'});
     }
   }
   // Definir as colunas que a tabela "situations" deve ter
