@@ -63,22 +63,34 @@
       <input type="hidden" name="id-{{id}}" value="{{id}}">
       <input type="hidden" name="urlOld-{{urlOld}}"
         value="{{urlOld}}"/>
-      <div class="column">
+      <div class=" gallery">
+        
+          <input type="image" name="image" id="url-{{id}}"
+            value="{{urlOld}}" onchange="inputFilePreviewImg()">
 
-        <input type="image" name="image" id="url-{{id}}"
-          value="{{urlOld}}" onchange="inputFilePreviewImg()">
+        </div>
       </div>
-      <div class="column">
+      <div class=" gallery">
+           <div class="image">
         {{#if urlOld}}
         <span id="preview-img">
           <img src="/images/news/{{urlOld}}"
             alt="Imagem" class="view-image-user"></span>
+        <div class="buttons">
+          <a href="/noticias/edit-image/{{id}}"
+         class="edit">Edit</a>
+         <a href="/noticias/delete-image/{{id}}"
+         class="delete" onclick="return confirm('Tem certeza que deseja excluir este registro? ')">Delete</a>
+        </div>
+        </div>
         {{else}}
         <span id="preview-img">
           <img src="/images/news/user.jpg"
             alt="Imagem" class="view-image-user"></span>
         {{/if}}
         {{/each}}
+          
+        
       </div>
     </div>
   </div>

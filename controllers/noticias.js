@@ -491,10 +491,13 @@ router.post('/add-image', uploads.array('images', 5), eAdmin, async (req, res) =
       console.log(novaImagem)
     }
     await transaction.commit();
-    console.log("Imagens Salvas com Sucesso! ");
+    req.flash("success_msg", "Imagem salva com sucesso!");
+    // REDIRECIONAR O USUÁRIO APÓS APAGAR COM SUCESSO
+    res.redirect('/noticias/view/' + idNoticia);
   } catch (error) {
     await transaction.rollback();
-    console.log("Erro ao salvar imagens:", error);
+   // console.log("Erro ao salvar imagens:", error);
+    res.redirect('/noticias?page=1');
   }
 
 });
@@ -541,6 +544,51 @@ router.get('/delete/:id', async (req, res) => {
   }).catch(() => {
     // CRIAR A MENSAGEM DE ERRO
     req.flash("danger_msg", "ERRO: Notícia não deletado! ");
+    // REDIRECIONAR O USUÁRIO APÓS ERRO NA EXCLUSÃO.
+    res.redirect('/noticias/view' + req.params.id);
+  })
+})
+
+// CRIAR A ROTA APAGAR O USUÁRIO NO BD, USAR A FUNCÃO eAdmin com middleware para verificar se o usuário está logado
+router.get('/delete-image/:id', async (req, res) => {
+  // RECUPERAR O REGISTRO NO BD.
+  const imagem = await db.imagens.findOne({
+    // INDICAR QUAIS COLUNAS RECUPERAR
+    attributes: ['id','url','noticiaId'],
+
+    // ACRESCENTAR CONDIÇÃO PARA INDICAR QUAL REGISTRO DEVE SER RETORNADO DO BD.
+    where: {
+      id: req.params.id
+    }
+  });
+  // VERIFICAR SE O USUÁRIO TEM IMAGEM SALVA NO BD.
+  if (imagem.dataValues.url) {
+    // CRIAR O CAMINHO DA IMAGEM QUE O USUÁRIO TEM NO BD.
+    var imgOld = "./public/images/news/" + imagem.dataValues.url;
+
+    // fs.access usado para testar as permissões do arquivo
+    fs.access(imgOld, (err) => {
+      // ACESSA O IF QUANDO NÃO TIVER NENHUM ERRO
+      if (!err) {
+        // APAGAR A IMAGEM ANTIGA
+        fs.unlink(imgOld, () => { })
+      }
+    });
+  }
+
+  db.imagens.destroy({
+    // ACRESCENTAR O WHERE NA INSTRUÇÃO SQL INDICANDO QUAL REGISTRO EXCLUIR NO BD.
+    where: {
+      id: req.params.id
+    }
+  }).then(() => {
+    // CRIAR A MENSAGEM DE USUÁRIO APAGADO COM SUCESSO
+    req.flash("success_msg", "Imagem apagada com sucesso!");
+    // REDIRECIONAR O USUÁRIO APÓS APAGAR COM SUCESSO
+    res.redirect('/noticias/view/' + imagem.dataValues.noticiaId);
+  }).catch(() => {
+    // CRIAR A MENSAGEM DE ERRO
+    req.flash("danger_msg", "ERRO: Imagem não deletada! ");
     // REDIRECIONAR O USUÁRIO APÓS ERRO NA EXCLUSÃO.
     res.redirect('/noticias/view' + req.params.id);
   })
